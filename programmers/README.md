@@ -4,4 +4,5 @@
 |------------------------------|:---------------------------------------------------------------------:|
 | [1845 - 폰겟몬](./1845)         | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/1845)  |
 | [12906 - 같은 숫자는 싫어](./12906) | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/12906) |
+| [42576 - 완주하지 못한 선수](.42567) | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42576) |
 | [42626 - 더 맵게](./42626)      | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42626) |
