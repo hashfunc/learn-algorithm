@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "solution.h"
+#include "solution.hpp"
 
 TEST(CASE, 1) {
     auto nums = std::vector<int>{3, 1, 2, 3};

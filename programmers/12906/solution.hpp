@@ -1,6 +1,6 @@
-#include "solution.h"
+#include <vector>
 
-std::vector<int> solution(const std::vector<int> &arr) {
+std::vector<int> solution(std::vector<int> arr) {
     std::vector<int> answer = {arr[0]};
 
     for (const int &num: arr) {

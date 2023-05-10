@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "solution.h"
+#include "solution.hpp"
 
 TEST(CASE, 1) {
     auto participant = std::vector<std::string>{"leo", "kiki", "eden"};

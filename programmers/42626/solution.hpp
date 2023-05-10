@@ -1,6 +1,7 @@
-#include "solution.h"
+#include <queue>
+#include <vector>
 
-int solution(const std::vector<int> &scoville, const int K) {
+int solution(std::vector<int> scoville, int K) {
     std::priority_queue<int, std::vector<int>, std::greater<>> scoville_queue(scoville.begin(), scoville.end());
 
     int answer = 0;

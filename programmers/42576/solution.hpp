@@ -1,6 +1,8 @@
-#include "solution.h"
+#include <string>
+#include <unordered_map>
+#include <vector>
 
-std::string solution(const std::vector<std::string> &participant, const std::vector<std::string> &completion) {
+std::string solution(std::vector<std::string> participant, const std::vector<std::string> completion) {
     auto completion_map = std::unordered_map<std::string, int>();
 
     for (const auto &key: completion) {
