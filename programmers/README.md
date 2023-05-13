@@ -9,4 +9,5 @@
 | [42578 - 위장](./42578)         | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42578) |
 | [42579 - 베스트앨범](./42579)      | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42579) |
 | [42583 - 다리를 지나는 트럭](./42583) | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42583) |
+| [42584 - 주식가격](./42584)       | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42584) |
 | [42626 - 더 맵게](./42626)       | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42626) |
