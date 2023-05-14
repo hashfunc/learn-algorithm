@@ -5,6 +5,7 @@ enable_testing()
 
 add_subdirectory(1845)
 add_subdirectory(12906)
+add_subdirectory(12909)
 add_subdirectory(42576)
 add_subdirectory(42577)
 add_subdirectory(42578)
