@@ -16,3 +16,4 @@
 | [42626 - 더 맵게](./42626)       | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42626) |
 | [42627 - 디스크 컨트롤러](./42627)   | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42627) |
 | [42628 - 이중우선순위큐](./42628)    | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42628) |
+| [42746 - 가장 큰 수](./42746)     | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42746) |
