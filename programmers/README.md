@@ -18,3 +18,4 @@
 | [42628 - 이중우선순위큐](./42628)    | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42628) |
 | [42746 - 가장 큰 수](./42746)     | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42746) |
 | [42747 - H-Index](./42747)    | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42747) |
+| [42748 - K번째수](./42748)       | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42748) |
