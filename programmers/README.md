@@ -21,5 +21,6 @@
 | [42748 - K번째수](./42748)       | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42748) |
 | [42839 - 소수 찾기](./42839)      | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42839) |
 | [42840 - 모의고사](./42840)       | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42840) |
+| [42842 - 카펫](./42842)         | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42842) |
 | [42862 - 체육복](./42862)        | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42862) |
 | [86491 - 최소직사각형](./86491)     | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/86491) |
