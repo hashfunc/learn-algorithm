@@ -24,3 +24,4 @@
 | [42842 - 카펫](./42842)         | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42842) |
 | [42862 - 체육복](./42862)        | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42862) |
 | [86491 - 최소직사각형](./86491)     | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/86491) |
+| [87946 - 피로도](./87946)        | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/87946) |
