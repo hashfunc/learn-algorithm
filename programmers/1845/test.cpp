@@ -2,21 +2,23 @@
 
 #include "solution.hpp"
 
-class TestParameters : public ::testing::TestWithParam<std::tuple<int, std::vector<int>>> {};
+#define NAME 1845
 
-TEST_P(TestParameters, 1845) {
-  const int &expected = std::get<0>(GetParam());
-  const std::vector<int> &nums = std::get<1>(GetParam());
+class TestParameters : public ::testing::TestWithParam<std::tuple<std::vector<int>, int>> {};
+
+TEST_P(TestParameters, NAME) {
+  const auto &nums = std::get<0>(GetParam());
+  const auto &expected = std::get<1>(GetParam());
 
   EXPECT_EQ(solution(nums), expected);
 }
 
 INSTANTIATE_TEST_SUITE_P(
-    1845,
+    NAME,
     TestParameters,
     ::testing::Values(
-        std::make_tuple(2, std::vector<int>{3, 1, 2, 3}),
-        std::make_tuple(3, std::vector<int>{3, 3, 3, 2, 2, 4}),
-        std::make_tuple(2, std::vector<int>{3, 3, 3, 2, 2, 2})
+        std::make_tuple(std::vector<int>{3, 1, 2, 3}, 2),
+        std::make_tuple(std::vector<int>{3, 3, 3, 2, 2, 4}, 3),
+        std::make_tuple(std::vector<int>{3, 3, 3, 2, 2, 2}, 2)
     )
 );

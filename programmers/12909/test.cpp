@@ -2,26 +2,24 @@
 
 #include "solution.hpp"
 
-TEST(CASE, 1) {
-  std::string s = "()()";
+#define NAME 12909
 
-  EXPECT_EQ(true, solution(s));
+class TestParameters : public ::testing::TestWithParam<std::tuple<std::string, bool>> {};
+
+TEST_P(TestParameters, NAME) {
+  const auto &s = std::get<0>(GetParam());
+  const auto &expected = std::get<1>(GetParam());
+
+  EXPECT_EQ(solution(s), expected);
 }
 
-TEST(CASE, 2) {
-  std::string s = "(())()";
-
-  EXPECT_EQ(true, solution(s));
-}
-
-TEST(CASE, 3) {
-  std::string s = ")()(";
-
-  EXPECT_EQ(false, solution(s));
-}
-
-TEST(CASE, 4) {
-  std::string s = "(()(";
-
-  EXPECT_EQ(false, solution(s));
-}
+INSTANTIATE_TEST_SUITE_P(
+    NAME,
+    TestParameters,
+    ::testing::Values(
+        std::make_tuple("()()", true),
+        std::make_tuple("(())()", true),
+        std::make_tuple(")()(", false),
+        std::make_tuple("(()(", false)
+    )
+);
