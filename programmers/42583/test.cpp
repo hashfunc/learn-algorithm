@@ -2,26 +2,25 @@
 
 #include "solution.hpp"
 
-TEST(CASE, 1) {
-    constexpr int bridge_length = 2;
-    constexpr int weight = 10;
-    auto truck_weights = std::vector<int>{7, 4, 5, 6};
+#define NAME 42583
 
-    EXPECT_EQ(8, solution(bridge_length, weight, truck_weights));
+class TestParameters : public ::testing::TestWithParam<std::tuple<int, int, std::vector<int>, int>> {};
+
+TEST_P(TestParameters, NAME) {
+  const auto &bridge_length = std::get<0>(GetParam());
+  const auto &weight = std::get<1>(GetParam());
+  const auto &truck_weight = std::get<2>(GetParam());
+  const auto &expected = std::get<3>(GetParam());
+
+  EXPECT_EQ(solution(bridge_length, weight, truck_weight), expected);
 }
 
-TEST(CASE, 2) {
-    constexpr int bridge_length = 100;
-    constexpr int weight = 100;
-    auto truck_weights = std::vector<int>{10};
-
-    EXPECT_EQ(101, solution(bridge_length, weight, truck_weights));
-}
-
-TEST(CASE, 3) {
-    constexpr int bridge_length = 100;
-    constexpr int weight = 100;
-    auto truck_weights = std::vector<int>{10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
-
-    EXPECT_EQ(110, solution(bridge_length, weight, truck_weights));
-}
+INSTANTIATE_TEST_SUITE_P(
+	NAME,
+	TestParameters,
+	::testing::Values(
+		std::make_tuple(2, 10, std::vector<int>{7, 4, 5, 6}, 8),
+		std::make_tuple(100, 100, std::vector<int>{10}, 101),
+		std::make_tuple(100, 100, std::vector<int>{10, 10, 10, 10, 10, 10, 10, 10, 10, 10}, 110)
+	)
+);

@@ -2,14 +2,22 @@
 
 #include "solution.hpp"
 
-TEST(CASE, 1) {
-  std::string numbers = "17";
+#define NAME 42839
 
-  EXPECT_EQ(3, solution(numbers));
+class TestParameters : public ::testing::TestWithParam<std::tuple<std::string, int>> {};
+
+TEST_P(TestParameters, NAME) {
+  const auto &numbers = std::get<0>(GetParam());
+  const auto &expected = std::get<1>(GetParam());
+
+  EXPECT_EQ(solution(numbers), expected);
 }
 
-TEST(CASE, 2) {
-  std::string numbers = "011";
-
-  EXPECT_EQ(2, solution(numbers));
-}
+INSTANTIATE_TEST_SUITE_P(
+	NAME,
+	TestParameters,
+	::testing::Values(
+		std::make_tuple("17", 3),
+		std::make_tuple("011", 2)
+	)
+);

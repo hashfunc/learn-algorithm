@@ -2,16 +2,23 @@
 
 #include "solution.hpp"
 
-TEST(CASE, 1) {
-  auto priorities = std::vector<int>{2, 1, 3, 2};
-  constexpr int location = 2;
+#define NAME 42587
 
-  EXPECT_EQ(1, solution(priorities, location));
+class TestParameters : public ::testing::TestWithParam<std::tuple<std::vector<int>, int, int>> {};
+
+TEST_P(TestParameters, NAME) {
+  const auto &priorities = std::get<0>(GetParam());
+  const auto &location = std::get<1>(GetParam());
+  const auto &expected = std::get<2>(GetParam());
+
+  EXPECT_EQ(solution(priorities, location), expected);
 }
 
-TEST(CASE, 2) {
-  auto priorities = std::vector<int>{1, 1, 9, 1, 1, 1};
-  constexpr int location = 0;
-
-  EXPECT_EQ(5, solution(priorities, location));
-}
+INSTANTIATE_TEST_SUITE_P(
+	NAME,
+	TestParameters,
+	::testing::Values(
+		std::make_tuple(std::vector<int>{2, 1, 3, 2}, 2, 1),
+		std::make_tuple(std::vector<int>{1, 1, 9, 1, 1, 1}, 0, 5)
+	)
+);

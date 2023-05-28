@@ -3,16 +3,23 @@
 
 #include "solution.hpp"
 
-TEST(CASE, 1) {
-  auto progresses = std::vector<int>{93, 30, 55};
-  auto speeds = std::vector<int>{1, 30, 5};
+#define NAME 42586
 
-  ASSERT_THAT(solution(progresses, speeds), testing::ElementsAre(2, 1));
+class TestParameters : public ::testing::TestWithParam<std::tuple<std::vector<int>, std::vector<int>, std::vector<int>>> {};
+
+TEST_P(TestParameters, NAME) {
+  const auto &progresses = std::get<0>(GetParam());
+  const auto &speeds = std::get<1>(GetParam());
+  const auto &expected = std::get<2>(GetParam());
+
+  ASSERT_THAT(solution(progresses, speeds), testing::ElementsAreArray(expected));
 }
 
-TEST(CASE, 2) {
-  auto progresses = std::vector<int>{95, 90, 99, 99, 80, 99};
-  auto speeds = std::vector<int>{1, 1, 1, 1, 1, 1};
-
-  ASSERT_THAT(solution(progresses, speeds), testing::ElementsAre(1, 3, 2));
-}
+INSTANTIATE_TEST_SUITE_P(
+	NAME,
+	TestParameters,
+	::testing::Values(
+		std::make_tuple(std::vector<int>{93, 30, 55}, std::vector<int>{1, 30, 5}, std::vector<int>{2, 1}),
+		std::make_tuple(std::vector<int>{95, 90, 99, 99, 80, 99}, std::vector<int>{1, 1, 1, 1, 1, 1}, std::vector<int>{1, 3, 2})
+	)
+);

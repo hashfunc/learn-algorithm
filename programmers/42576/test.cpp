@@ -2,23 +2,23 @@
 
 #include "solution.hpp"
 
-TEST(CASE, 1) {
-  auto participant = std::vector<std::string>{"leo", "kiki", "eden"};
-  auto completion = std::vector<std::string>{"eden", "kiki"};
+#define NAME 42576
 
-  EXPECT_EQ("leo", solution(participant, completion));
+class TestParameters : public ::testing::TestWithParam<std::tuple<std::vector<std::string>, std::vector<std::string>, std::string>> {};
+
+TEST_P(TestParameters, NAME) {
+  const auto &participant = std::get<0>(GetParam());
+  const auto &completion = std::get<1>(GetParam());
+  const auto &expected = std::get<2>(GetParam());
+
+  EXPECT_EQ(solution(participant, completion), expected);
 }
 
-TEST(CASE, 2) {
-  auto participant = std::vector<std::string>{"marina", "josipa", "nikola", "vinko", "filipa"};
-  auto completion = std::vector<std::string>{"josipa", "filipa", "marina", "nikola"};
-
-  EXPECT_EQ("vinko", solution(participant, completion));
-}
-
-TEST(CASE, 3) {
-  auto participant = std::vector<std::string>{"mislav", "stanko", "mislav", "ana"};
-  auto completion = std::vector<std::string>{"stanko", "ana", "mislav"};
-
-  EXPECT_EQ("mislav", solution(participant, completion));
-}
+INSTANTIATE_TEST_SUITE_P(
+	NAME, TestParameters,
+	::testing::Values(
+		std::make_tuple(std::vector<std::string>{"leo", "kiki", "eden"}, std::vector<std::string>{"eden", "kiki"}, "leo"),
+		std::make_tuple(std::vector<std::string>{"marina", "josipa", "nikola", "vinko", "filipa"}, std::vector<std::string>{"josipa", "filipa", "marina", "nikola"}, "vinko"),
+		std::make_tuple(std::vector<std::string>{"mislav", "stanko", "mislav", "ana"}, std::vector<std::string>{"stanko", "ana", "mislav"}, "mislav")
+    )
+);

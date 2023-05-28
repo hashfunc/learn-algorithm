@@ -2,20 +2,23 @@
 
 #include "solution.hpp"
 
-TEST(CASE, 1) {
-  auto phone_book = std::vector<std::string>{"119", "97674223", "1195524421"};
+#define NAME 42577
 
-  EXPECT_EQ(false, solution(phone_book));
+class TestParameters : public ::testing::TestWithParam<std::tuple<std::vector<std::string>, bool>> {};
+
+TEST_P(TestParameters, NAME) {
+  const auto &phone_book = std::get<0>(GetParam());
+  const auto &expected = std::get<1>(GetParam());
+
+  EXPECT_EQ(solution(phone_book), expected);
 }
 
-TEST(CASE, 2) {
-  auto phone_book = std::vector<std::string>{"123", "456", "789"};
-
-  EXPECT_EQ(true, solution(phone_book));
-}
-
-TEST(CASE, 3) {
-  auto phone_book = std::vector<std::string>{"12", "123", "1235", "567", "88"};
-
-  EXPECT_EQ(false, solution(phone_book));
-}
+INSTANTIATE_TEST_SUITE_P(
+	NAME,
+	TestParameters,
+	::testing::Values(
+		std::make_tuple(std::vector<std::string>{"119", "97674223", "1195524421"}, false),
+		std::make_tuple(std::vector<std::string>{"123", "456", "789"}, true),
+		std::make_tuple(std::vector<std::string>{"12", "123", "1235", "567", "88"}, false)
+	)
+);

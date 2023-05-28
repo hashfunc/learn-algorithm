@@ -2,9 +2,22 @@
 
 #include "solution.hpp"
 
-TEST(CASE, 1) {
-  auto scoville = std::vector<int>{1, 2, 3, 9, 10, 12};
-  constexpr int K = 7;
+#define NAME 42626
 
-  EXPECT_EQ(2, solution(scoville, K));
+class TestParameters : public ::testing::TestWithParam<std::tuple<std::vector<int>, int, int>> {};
+
+TEST_P(TestParameters, NAME) {
+  const auto &scoville = std::get<0>(GetParam());
+  const auto &K = std::get<1>(GetParam());
+  const auto &expected = std::get<2>(GetParam());
+
+  EXPECT_EQ(solution(scoville, K), expected);
 }
+
+INSTANTIATE_TEST_SUITE_P(
+	NAME,
+	TestParameters,
+	::testing::Values(
+		std::make_tuple(std::vector<int>{1, 2, 3, 9, 10, 12}, 7, 2)
+	)
+);

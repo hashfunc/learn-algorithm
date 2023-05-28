@@ -2,20 +2,23 @@
 
 #include "solution.hpp"
 
-TEST(CASE, 1) {
-  std::vector<std::vector<int>> sizes = {{60, 50}, {30, 70}, {60, 30}, {80, 40}};
+#define NAME 86491
 
-  EXPECT_EQ(4000, solution(sizes));
+class TestParameters : public ::testing::TestWithParam<std::tuple<std::vector<std::vector<int>>, int>> {};
+
+TEST_P(TestParameters, NAME) {
+  const auto &sizes = std::get<0>(GetParam());
+  const auto &expected = std::get<1>(GetParam());
+
+  EXPECT_EQ(solution(sizes), expected);
 }
 
-TEST(CASE, 2) {
-  std::vector<std::vector<int>> sizes = {{10, 7}, {12, 3}, {8, 15}, {14, 7}, {5, 15}};
-
-  EXPECT_EQ(120, solution(sizes));
-}
-
-TEST(CASE, 3) {
-  std::vector<std::vector<int>> sizes = {{14, 4}, {19, 6}, {6, 16}, {18, 7}, {7, 11}};
-
-  EXPECT_EQ(133, solution(sizes));
-}
+INSTANTIATE_TEST_SUITE_P(
+	NAME,
+	TestParameters,
+	::testing::Values(
+		std::make_tuple(std::vector<std::vector<int>>{{60, 50}, {30, 70}, {60, 30}, {80, 40}}, 4000),
+		std::make_tuple(std::vector<std::vector<int>>{{10, 7}, {12, 3}, {8, 15}, {14, 7}, {5, 15}}, 120),
+		std::make_tuple(std::vector<std::vector<int>>{{14, 4}, {19, 6}, {6, 16}, {18, 7}, {7, 11}}, 133)
+	)
+);

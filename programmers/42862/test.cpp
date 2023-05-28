@@ -2,26 +2,25 @@
 
 #include "solution.hpp"
 
-TEST(CASE, 1) {
-  constexpr int n = 5;
-  std::vector<int> lost = {2, 4};
-  std::vector<int> reserve = {1, 3, 5};
+#define NAME 42862
 
-  EXPECT_EQ(5, solution(n, lost, reserve));
+class TestParameters : public ::testing::TestWithParam<std::tuple<int, std::vector<int>, std::vector<int>, int>> {};
+
+TEST_P(TestParameters, NAME) {
+  const auto &n = std::get<0>(GetParam());
+  const auto &lost = std::get<1>(GetParam());
+  const auto &reserve = std::get<2>(GetParam());
+  const auto &expected = std::get<3>(GetParam());
+
+  EXPECT_EQ(solution(n, lost, reserve), expected);
 }
 
-TEST(CASE, 2) {
-  constexpr int n = 5;
-  std::vector<int> lost = {2, 4};
-  std::vector<int> reserve = {3};
-
-  EXPECT_EQ(4, solution(n, lost, reserve));
-}
-
-TEST(CASE, 3) {
-  constexpr int n = 3;
-  std::vector<int> lost = {3};
-  std::vector<int> reserve = {1};
-
-  EXPECT_EQ(2, solution(n, lost, reserve));
-}
+INSTANTIATE_TEST_SUITE_P(
+	NAME,
+	TestParameters,
+	::testing::Values(
+		std::make_tuple(5, std::vector<int>{2, 4}, std::vector<int>{1, 3, 5}, 5),
+		std::make_tuple(5, std::vector<int>{2, 4}, std::vector<int>{3}, 4),
+		std::make_tuple(3, std::vector<int>{3}, std::vector<int>{1}, 2)
+	)
+);

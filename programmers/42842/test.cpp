@@ -2,9 +2,11 @@
 
 #include "solution.hpp"
 
+#define NAME 42842
+
 class TestParameters : public ::testing::TestWithParam<std::tuple<std::vector<int>, int, int>> {};
 
-TEST_P(TestParameters, 42842) {
+TEST_P(TestParameters, NAME) {
   const std::vector<int> &expected = std::get<0>(GetParam());
   const int &brown = std::get<1>(GetParam());
   const int &yellow = std::get<2>(GetParam());
@@ -13,7 +15,7 @@ TEST_P(TestParameters, 42842) {
 }
 
 INSTANTIATE_TEST_SUITE_P(
-    42842,
+	NAME,
     TestParameters,
     ::testing::Values(
         std::make_tuple(std::vector<int>{4, 3}, 10, 2),

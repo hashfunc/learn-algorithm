@@ -2,16 +2,22 @@
 
 #include "solution.hpp"
 
-TEST(CASE, 1) {
-  std::vector<std::vector<std::string>>
-      clothes = {{"yellow_hat", "headgear"}, {"blue_sunglasses", "eyewear"}, {"green_turban", "headgear"}};
+#define NAME 42578
 
-  EXPECT_EQ(5, solution(clothes));
+class TestParameters : public ::testing::TestWithParam<std::tuple<std::vector<std::vector<std::string>>, int>> {};
+
+TEST_P(TestParameters, NAME) {
+  const auto &clothes = std::get<0>(GetParam());
+  const auto &expected = std::get<1>(GetParam());
+
+  EXPECT_EQ(solution(clothes), expected);
 }
 
-TEST(CASE, 2) {
-  std::vector<std::vector<std::string>>
-      clothes = {{"crow_mask", "face"}, {"blue_sunglasses", "face"}, {"smoky_makeup", "face"}};
-
-  EXPECT_EQ(3, solution(clothes));
-}
+INSTANTIATE_TEST_SUITE_P(
+	NAME,
+	TestParameters,
+	::testing::Values(
+		std::make_tuple(std::vector<std::vector<std::string>>{{"yellow_hat", "headgear"}, {"blue_sunglasses", "eyewear"}, {"green_turban", "headgear"}}, 5),
+		std::make_tuple(std::vector<std::vector<std::string>>{{"crow_mask", "face"}, {"blue_sunglasses", "face"}, {"smoky_makeup", "face"}}, 3)
+	)
+);
