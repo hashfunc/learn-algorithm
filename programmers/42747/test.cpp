@@ -7,8 +7,7 @@
 class TestParameters : public ::testing::TestWithParam<std::tuple<std::vector<int>, int>> {};
 
 TEST_P(TestParameters, NAME) {
-  const auto &citations = std::get<0>(GetParam());
-  const auto &expected = std::get<1>(GetParam());
+  const auto &[citations, expected] = GetParam();
 
   EXPECT_EQ(solution(citations), expected);
 }

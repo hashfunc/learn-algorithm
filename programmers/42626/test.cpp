@@ -7,9 +7,7 @@
 class TestParameters : public ::testing::TestWithParam<std::tuple<std::vector<int>, int, int>> {};
 
 TEST_P(TestParameters, NAME) {
-  const auto &scoville = std::get<0>(GetParam());
-  const auto &K = std::get<1>(GetParam());
-  const auto &expected = std::get<2>(GetParam());
+  const auto &[scoville, K, expected] = GetParam();
 
   EXPECT_EQ(solution(scoville, K), expected);
 }

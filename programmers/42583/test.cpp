@@ -7,10 +7,7 @@
 class TestParameters : public ::testing::TestWithParam<std::tuple<int, int, std::vector<int>, int>> {};
 
 TEST_P(TestParameters, NAME) {
-  const auto &bridge_length = std::get<0>(GetParam());
-  const auto &weight = std::get<1>(GetParam());
-  const auto &truck_weight = std::get<2>(GetParam());
-  const auto &expected = std::get<3>(GetParam());
+  const auto &[bridge_length, weight, truck_weight, expected] = GetParam();
 
   EXPECT_EQ(solution(bridge_length, weight, truck_weight), expected);
 }

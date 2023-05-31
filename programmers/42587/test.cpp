@@ -7,9 +7,7 @@
 class TestParameters : public ::testing::TestWithParam<std::tuple<std::vector<int>, int, int>> {};
 
 TEST_P(TestParameters, NAME) {
-  const auto &priorities = std::get<0>(GetParam());
-  const auto &location = std::get<1>(GetParam());
-  const auto &expected = std::get<2>(GetParam());
+  const auto &[priorities, location, expected] = GetParam();
 
   EXPECT_EQ(solution(priorities, location), expected);
 }

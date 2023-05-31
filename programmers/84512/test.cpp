@@ -7,8 +7,7 @@
 class TestParameters : public ::testing::TestWithParam<std::tuple<std::string, int>> {};
 
 TEST_P(TestParameters, NAME) {
-  const auto &word = std::get<0>(GetParam());
-  const auto &expected = std::get<1>(GetParam());
+  const auto &[word, expected] = GetParam();
 
   EXPECT_EQ(solution(word), expected);
 }

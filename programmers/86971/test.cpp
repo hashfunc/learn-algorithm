@@ -7,9 +7,7 @@
 class TestParameters : public ::testing::TestWithParam<std::tuple<int, std::vector<std::vector<int>>, int>> {};
 
 TEST_P(TestParameters, NAME) {
-  const auto &n = std::get<0>(GetParam());
-  const auto &wires = std::get<1>(GetParam());
-  const auto &expected = std::get<2>(GetParam());
+  const auto &[n, wires, expected] = GetParam();
 
   EXPECT_EQ(solution(n, wires), expected);
 }

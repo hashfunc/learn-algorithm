@@ -8,9 +8,7 @@
 class TestParameters : public ::testing::TestWithParam<std::tuple<std::vector<int>, std::vector<int>, std::vector<int>>> {};
 
 TEST_P(TestParameters, NAME) {
-  const auto &progresses = std::get<0>(GetParam());
-  const auto &speeds = std::get<1>(GetParam());
-  const auto &expected = std::get<2>(GetParam());
+  const auto &[progresses, speeds, expected] = GetParam();
 
   ASSERT_THAT(solution(progresses, speeds), testing::ElementsAreArray(expected));
 }
