@@ -5,6 +5,7 @@
 | [1845 - 폰겟몬](./1845)           |  [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/1845)  |
 | [12906 - 같은 숫자는 싫어](./12906)   | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/12906)  |
 | [12909 - 올바른 괄호](./12909)      | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/12909)  |
+| [12931 - 자릿수 더하기](./12931)     | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/12931)  |
 | [42576 - 완주하지 못한 선수](./42576)  | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42576)  |
 | [42577 - 전화번호 목록](./42577)     | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42577)  |
 | [42578 - 위장](./42578)          | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42578)  |
