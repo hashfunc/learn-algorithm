@@ -3,9 +3,11 @@
 #include <unordered_map>
 #include <vector>
 
-std::vector<int> solution(std::vector<std::string> genres, std::vector<int> plays) {
+std::vector<int> solution(std::vector<std::string> genres,
+                          std::vector<int> plays) {
   auto genres_plays_map = std::unordered_map<std::string, int>();
-  auto genres_song_map = std::unordered_map<std::string, std::vector<std::pair<int, int>>>();
+  auto genres_song_map =
+      std::unordered_map<std::string, std::vector<std::pair<int, int>>>();
 
   for (auto index = 0; index < plays.size(); index++) {
     const auto &genre = genres[index];
@@ -15,10 +17,10 @@ std::vector<int> solution(std::vector<std::string> genres, std::vector<int> play
     genres_song_map[genre].emplace_back(index, play);
   }
 
-  std::vector<std::pair<std::string, int>> genres_plays_vector(genres_plays_map.begin(), genres_plays_map.end());
-  std::sort(genres_plays_vector.begin(), genres_plays_vector.end(), [](auto x, auto y) {
-    return x.second > y.second;
-  });
+  std::vector<std::pair<std::string, int>> genres_plays_vector(
+      genres_plays_map.begin(), genres_plays_map.end());
+  std::sort(genres_plays_vector.begin(), genres_plays_vector.end(),
+            [](auto x, auto y) { return x.second > y.second; });
 
   std::vector<int> answer;
 

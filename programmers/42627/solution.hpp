@@ -6,7 +6,9 @@ int solution(std::vector<std::vector<int>> jobs) {
   std::sort(jobs.begin(), jobs.end());
 
   auto count_of_job = jobs.size();
-  auto job_queue = std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, std::greater<>>();
+  auto job_queue =
+      std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>,
+                          std::greater<>>();
 
   int acc = 0;
 

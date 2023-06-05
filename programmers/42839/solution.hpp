@@ -19,7 +19,8 @@ bool is_prime_number(const int &number) {
   return true;
 }
 
-int count_possible_prime(const std::string &numbers, const std::string &prefix, std::unordered_set<int> &checked) {
+int count_possible_prime(const std::string &numbers, const std::string &prefix,
+                         std::unordered_set<int> &checked) {
   int count = 0;
 
   for (int index = 0; index < numbers.size(); index++) {

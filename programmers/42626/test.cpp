@@ -4,7 +4,9 @@
 
 #define NAME 42626
 
-class TestParameters : public ::testing::TestWithParam<std::tuple<std::vector<int>, int, int>> {};
+class TestParameters
+    : public ::testing::TestWithParam<std::tuple<std::vector<int>, int, int>> {
+};
 
 TEST_P(TestParameters, NAME) {
   const auto &[scoville, K, expected] = GetParam();
@@ -12,10 +14,6 @@ TEST_P(TestParameters, NAME) {
   EXPECT_EQ(solution(scoville, K), expected);
 }
 
-INSTANTIATE_TEST_SUITE_P(
-	NAME,
-	TestParameters,
-	::testing::Values(
-		std::make_tuple(std::vector<int>{1, 2, 3, 9, 10, 12}, 7, 2)
-	)
-);
+INSTANTIATE_TEST_SUITE_P(NAME, TestParameters,
+                         ::testing::Values(std::make_tuple(
+                             std::vector<int>{1, 2, 3, 9, 10, 12}, 7, 2)));

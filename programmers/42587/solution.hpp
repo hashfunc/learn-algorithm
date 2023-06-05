@@ -28,7 +28,6 @@ int solution(std::vector<int> priorities, int location) {
         return answer;
       }
     }
-
   } while (!print_queue.empty());
 
   return answer;

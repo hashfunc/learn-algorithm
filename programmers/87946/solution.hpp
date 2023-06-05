@@ -2,7 +2,8 @@
 #include <unordered_set>
 #include <vector>
 
-int go(int k, const std::vector<std::vector<int>> &dungeons, std::unordered_set<int> &checked) {
+int go(int k, const std::vector<std::vector<int>> &dungeons,
+       std::unordered_set<int> &checked) {
   int max_count = checked.size();
 
   for (auto index = 0; index < dungeons.size(); ++index) {
@@ -20,7 +21,8 @@ int go(int k, const std::vector<std::vector<int>> &dungeons, std::unordered_set<
       return max_count;
     }
 
-    max_count = std::max(max_count, go(k - dungeons[index][1], dungeons, checked));
+    max_count =
+        std::max(max_count, go(k - dungeons[index][1], dungeons, checked));
 
     checked.erase(index);
   }

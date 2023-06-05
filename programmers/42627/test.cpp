@@ -4,7 +4,8 @@
 
 #define NAME 42627
 
-class TestParameters : public ::testing::TestWithParam<std::tuple<std::vector<std::vector<int>>, int>> {};
+class TestParameters : public ::testing::TestWithParam<
+                           std::tuple<std::vector<std::vector<int>>, int>> {};
 
 TEST_P(TestParameters, NAME) {
   const auto &[jobs, expected] = GetParam();
@@ -13,9 +14,6 @@ TEST_P(TestParameters, NAME) {
 }
 
 INSTANTIATE_TEST_SUITE_P(
-	NAME,
-	TestParameters,
-	::testing::Values(
-		std::make_tuple(std::vector<std::vector<int>>{{0, 3}, {1, 9}, {2, 6}}, 9)
-	)
-);
+    NAME, TestParameters,
+    ::testing::Values(std::make_tuple(
+        std::vector<std::vector<int>>{{0, 3}, {1, 9}, {2, 6}}, 9)));

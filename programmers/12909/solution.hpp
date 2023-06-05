@@ -3,7 +3,7 @@
 bool solution(std::string s) {
   int count = 0;
 
-  for (const auto c: s) {
+  for (const auto c : s) {
     if (c == '(') {
       count += 1;
       continue;

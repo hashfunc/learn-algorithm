@@ -12,11 +12,6 @@ TEST_P(TestParameters, NAME) {
   EXPECT_EQ(solution(N), answer);
 }
 
-INSTANTIATE_TEST_SUITE_P(
-	NAME,
-	TestParameters,
-	::testing::Values(
-		std::make_tuple(123, 6),
-		std::make_tuple(987, 24)
-	)
-);
+INSTANTIATE_TEST_SUITE_P(NAME, TestParameters,
+                         ::testing::Values(std::make_tuple(123, 6),
+                                           std::make_tuple(987, 24)));

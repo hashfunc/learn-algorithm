@@ -3,7 +3,9 @@
 #include <vector>
 
 int solution(std::vector<std::vector<int>> sizes) {
-  int max_size[2] = {0,};
+  int max_size[2] = {
+      0,
+  };
 
   for (auto &size : sizes) {
     std::sort(size.begin(), size.end());

@@ -2,7 +2,8 @@
 #include <vector>
 
 int solution(std::vector<int> scoville, int K) {
-  std::priority_queue<int, std::vector<int>, std::greater<>> scoville_queue(scoville.begin(), scoville.end());
+  std::priority_queue<int, std::vector<int>, std::greater<>> scoville_queue(
+      scoville.begin(), scoville.end());
 
   int answer = 0;
 

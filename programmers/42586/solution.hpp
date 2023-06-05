@@ -1,14 +1,16 @@
 #include <queue>
 #include <vector>
 
-std::vector<int> solution(std::vector<int> progresses, std::vector<int> speeds) {
+std::vector<int> solution(std::vector<int> progresses,
+                          std::vector<int> speeds) {
   auto expected_deployments = std::queue<int>();
 
   for (int index = 0; index < progresses.size(); index++) {
     int speed = speeds[index];
     int remain_progress = 100 - progresses[index];
 
-    int expected_deployment = (remain_progress / speed) + (remain_progress % speed == 0 ? 0 : 1);
+    int expected_deployment =
+        (remain_progress / speed) + (remain_progress % speed == 0 ? 0 : 1);
     expected_deployments.push(expected_deployment);
   }
 
