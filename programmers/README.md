@@ -26,6 +26,7 @@
 | [42860 - 조이스틱](./42860)        | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42860)  |
 | [42862 - 체육복](./42862)         | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42862)  |
 | [42883 - 큰 수 만들기](./42883)     | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42883)  |
+| [42885 - 구명보트](./42885)        | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42885)  |
 | [84512 - 모음 사전](./84512)       | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/84512)  |
 | [86491 - 최소직사각형](./86491)      | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/86491)  |
 | [86971 - 전력망을 둘로 나누기](./86971) | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/86971)  |
