@@ -33,5 +33,6 @@
 | [87946 - 피로도](./87946)         | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/87946)  |
 | [131705 - 삼총사](./131705)       | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/131705) |
 | [155652 - 둘만 암호](./155652)     | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/155652) |
+| [159994 - 카드 뭉치](./159994)     | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/159994) |
 | [176963 - 추억 점수](./176963)     | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/176963) |
 | [178871 - 달기기 경주](./178871)    | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/178871) |
