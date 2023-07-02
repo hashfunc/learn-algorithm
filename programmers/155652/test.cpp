@@ -4,16 +4,15 @@
 
 #define NAME 155652
 
-class TestParameters
-    : public ::testing::TestWithParam<
-          std::tuple<std::string, std::string, int, std::string>> {};
+class TestParameters : public ::testing::TestWithParam<std::tuple<std::string, std::string, int, std::string>>
+{
+};
 
-TEST_P(TestParameters, NAME) {
-  const auto &[s, skip, index, result] = GetParam();
+TEST_P(TestParameters, NAME)
+{
+    const auto &[s, skip, index, result] = GetParam();
 
-  EXPECT_EQ(solution(s, skip, index), result);
+    EXPECT_EQ(solution(s, skip, index), result);
 }
 
-INSTANTIATE_TEST_SUITE_P(NAME, TestParameters,
-                         ::testing::Values(std::make_tuple("aukks", "wbqd", 5,
-                                                           "happy")));
+INSTANTIATE_TEST_SUITE_P(NAME, TestParameters, ::testing::Values(std::make_tuple("aukks", "wbqd", 5, "happy")));
