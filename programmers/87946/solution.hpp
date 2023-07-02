@@ -4,7 +4,7 @@
 
 int go(int k, const std::vector<std::vector<int>> &dungeons, std::unordered_set<int> &checked)
 {
-    int max_count = checked.size();
+    int max_count = static_cast<int>(checked.size());
 
     for (auto index = 0; index < dungeons.size(); ++index)
     {

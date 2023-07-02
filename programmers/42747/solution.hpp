@@ -13,5 +13,5 @@ int solution(std::vector<int> citations)
         }
     }
 
-    return citations.size();
+    return static_cast<int>(citations.size());
 }

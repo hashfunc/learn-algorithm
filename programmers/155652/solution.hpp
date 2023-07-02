@@ -4,7 +4,7 @@
 
 std::string solution(std::string s, std::string skip, int index)
 {
-    std::string characters = "";
+    std::string characters;
 
     for (auto character = 'a'; character <= 'z'; ++character)
     {
@@ -14,7 +14,7 @@ std::string solution(std::string s, std::string skip, int index)
         }
     }
 
-    std::string answer = "";
+    std::string answer;
 
     for (const auto &character : s)
     {

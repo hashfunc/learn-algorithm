@@ -28,5 +28,5 @@ int solution(std::string word)
 
     std::sort(dictionary.begin(), dictionary.end());
 
-    return std::find(dictionary.begin(), dictionary.end(), word) - dictionary.begin() + 1;
+    return static_cast<int>(std::find(dictionary.begin(), dictionary.end(), word) - dictionary.begin() + 1);
 }

@@ -33,7 +33,7 @@ std::vector<int> solution(std::vector<int> prices)
     while (!index_stack.empty())
     {
         auto index = index_stack.top();
-        answer[index] = prices.size() - index - 1;
+        answer[index] = static_cast<int>(prices.size() - index - 1);
         index_stack.pop();
     }
 

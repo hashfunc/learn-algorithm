@@ -39,5 +39,5 @@ int solution(std::vector<std::vector<int>> jobs)
         }
     }
 
-    return acc / count_of_job;
+    return static_cast<int>(acc / count_of_job);
 }

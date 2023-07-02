@@ -18,7 +18,7 @@ std::vector<int> solution(std::vector<int> progresses, std::vector<int> speeds)
 
     int count = 1;
     auto expected = expected_deployments.front();
-    for (;;)
+    while (true)
     {
         expected_deployments.pop();
 
