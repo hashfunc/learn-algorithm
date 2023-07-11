@@ -24,6 +24,7 @@
 | [42840 - 모의고사](./42840)           | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42840)  |
 | [42842 - 카펫](./42842)             | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42842)  |
 | [42860 - 조이스틱](./42860)           | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42860)  |
+| [42861 - 섬 연결하기](./42861)         | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42861)  |
 | [42862 - 체육복](./42862)            | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42862)  |
 | [42883 - 큰 수 만들기](./42883)        | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42883)  |
 | [42885 - 구명보트](./42885)           | [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/42885)  |
