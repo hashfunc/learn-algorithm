@@ -2,7 +2,7 @@
 
 #include "solution.hpp"
 
-#define NAME 1845
+#define NAME 42861
 
 class TestParameters : public ::testing::TestWithParam<std::tuple<int, std::vector<std::vector<int>>, int>>
 {
