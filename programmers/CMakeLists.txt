@@ -1,7 +1,4 @@
-find_package(Threads REQUIRED)
-find_package(GTest CONFIG REQUIRED)
-
-enable_testing()
+include(GoogleTest)
 
 file(GLOB FILES LIST_DIRECTORIES true "*")
 
