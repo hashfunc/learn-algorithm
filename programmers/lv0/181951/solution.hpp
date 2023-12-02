@@ -7,13 +7,13 @@ void solution(const int a, const int b)
     std::cout << "b = " << b << std::endl;
 }
 
-int main()
-{
-    int a, b;
-
-    std::cin >> a >> b;
-
-    solution(a, b);
-
-    return 0;
-}
+// int main()
+// {
+//   int a, b;
+//
+//   std::cin >> a >> b;
+//
+//   solution(a, b);
+//
+//   return 0;
+// }

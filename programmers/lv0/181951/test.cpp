@@ -17,5 +17,5 @@ TEST(TEST_181951, TEST_1)
 
     const auto &result = testing::internal::GetCapturedStdout();
 
-    EXPECT_EQ(expected, str);
+    EXPECT_EQ(expected, result);
 }
